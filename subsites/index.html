@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Try Ajax</title>
+    <script>
+        var x;
+        x=10;
+        alter(x);
+    </script>
+    <script type="text/javascript">
+        function getData(pageName){
+            var req=new XMLHttpRequest();
+//            req.open("get","https://127.0.0.1/"+pageName);
+            req.open("get",pageName);
+            req.onlod=function(){
+                alert(this.responseText);
+                var content=document.getElementById("content");
+                content.innerHTML=rt(this.responseText);
+            }
+            req.send();
+        }
+    </script>
+</head>
+<body onload="getDta('popular.htm')">
+    <div>
+        <span onclick="getData('popular.htm')">熱門<a href="popular.htm"></a></span>
+        <span onmouseover="alter('latest.htm')">最新</span>
+    </div>
+    <hr>
+    <div id="content"></div>
+    <button id="ajaxButton" type="button">Make a request</button>
+
+<script>
+  (function () {
+    var httpRequest;
+    document
+      .getElementById("ajaxButton")
+      .addEventListener("click", makeRequest);
+
+    function makeRequest() {
+      httpRequest = new XMLHttpRequest();
+
+      if (!httpRequest) {
+        alert("Giving up :( Cannot create an XMLHTTP instance");
+        return false;
+      }
+      httpRequest.onreadystatechange = alertContents;
+      httpRequest.open("GET", "https://www.google.com");
+      httpRequest.send();
+    }
+
+    function alertContents() {
+      if (httpRequest.readyState === XMLHttpRequest.DONE) {
+        if (httpRequest.status === 200) {
+          alert(httpRequest.responseText);
+        } else {
+          alert("There was a problem with the request.");
+          alert(httpRequest.status);
+          alert(httpRequest.responseText);
+        }
+      }
+    }
+  })();
+</script>
+</body>
+</html>
