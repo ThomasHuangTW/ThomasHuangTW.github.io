@@ -1,5 +1,5 @@
 const div = document.getElementById('markdown-content');
-let xhr = new XMLHttpRequest();
+//let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = () => {
     if(xhr.readyState == 4) {
