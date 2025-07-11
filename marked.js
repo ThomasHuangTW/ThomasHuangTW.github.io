@@ -1,11 +1,11 @@
 const div = document.getElementById('markdown-content');
-//let xhr = new XMLHttpRequest();
+let xhr2 = new XMLHttpRequest();
 
-xhr.onreadystatechange = () => {
-    if(xhr.readyState == 4) {
-        if(xhr.status == 200) {
-            console.log(xhr.responseText);
-            const markdownContent = xhr.responseText;
+xhr2.onreadystatechange = () => {
+    if(xhr2.readyState == 4) {
+        if(xhr2.status == 200) {
+            console.log(xhr2.responseText);
+            const markdownContent = xhr2.responseText;
             console.log(markdownContent );
             const htmlContent = marked.parse(markdownContent);
             console.log(htmlContent );
@@ -13,5 +13,5 @@ xhr.onreadystatechange = () => {
         }
     }
 }
-xhr.open('get', 'README.md', true);
-xhr.send(null);
+xhr2.open('get', 'README.md', true);
+xhr2.send(null);
