@@ -5,21 +5,19 @@
     <title>Test</title>
     <link href="index.css" type="text/css" rel="stylesheet">
     <script src="index.js" defer></script>
-	// 在這裡對marked框架進行引用
-	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+    <!-- // 在這裡對marked框架進行引用 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> 
+    <script src="marked.js" defer></script>
 </head>
 <body>
     <p>Test page for AJAX</p>
     <a href="/blog">My blog demo</a>
+    <br>
     <a href="README.md">READ ME</a>
+    <br>
     <div id="markdown-content">
         # This is a Markdown header
         This is a paragraph with **bold** and *italic* text.
     </div>
-    <script>
-        const markdownContent = document.getElementById('markdown-content').innerText;
-        const htmlContent = marked.parse(markdownContent);
-        document.getElementById('markdown-content').innerHTML = htmlContent;
-    </script>
 </body>
 </html>
