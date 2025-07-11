@@ -1,4 +1,4 @@
-const p = document.getElementById('markdown-content');
+const div = document.getElementById('markdown-content');
 let xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = () => {
@@ -9,7 +9,7 @@ xhr.onreadystatechange = () => {
             console.log(markdownContent );
             const htmlContent = marked.parse(markdownContent);
             console.log(htmlContent );
-            p.innerHTML = htmlContent;
+            div.innerHTML = htmlContent;
         }
     }
 }
